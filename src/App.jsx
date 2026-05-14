@@ -1,6 +1,7 @@
 import { useState } from "react"
-import StatCard from "./components/StatCard"
-import Button from "./components/Button"
+import StatCard from "./Components/StatCard"
+import Button from "./Components/Button"
+import Navbar from "./Components/Navbar"
 
 function App() {
   const [missions, setMissions] = useState(12)
@@ -23,15 +24,7 @@ function App() {
   ]
   return (
     <div className="min-h-screen bg-[#050816] text-white">
-      <nav className="flex items-center justify-between px-8 py-4 border-b border-white/10">
-        <h1 className="text-2xl font-bold text-red-500">
-          SpiderTrack
-        </h1>
-
-        <button className="bg-red-500 px-4 py-2 rounded-lg hover:bg-red-600 transition">
-          Login
-        </button>
-      </nav>
+      <Navbar />
 
       <main className="p-8">
         <h2 className="text-4xl font-bold mb-4">

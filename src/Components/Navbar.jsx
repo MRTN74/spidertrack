@@ -1,5 +1,5 @@
 import NavLink from "./NavLink"
-export default Navbar
+
 function Navbar() {
     return (
         <nav className="flex justify-between px-6 py-4 bg-black/75 backdrop-blur-md border-b border-white/10">
@@ -16,3 +16,4 @@ function Navbar() {
     )
 }
 
+export default Navbar
