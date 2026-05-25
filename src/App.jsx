@@ -2,12 +2,14 @@ import { useState } from "react"
 import StatCard from "./Components/StatCard"
 import Button from "./Components/Button"
 import Navbar from "./Components/Navbar"
+import MisionCard from "./Components/MisionCard"
 
 function App() {
   const [missions, setMissions] = useState(12)
+
   const stats = [
     {
-      title: "Active Missions",
+      title: "Active Misions",
       value: missions,
       color: "text-red-400",
     },
@@ -22,6 +24,7 @@ function App() {
       color: "text-blue-400",
     },
   ]
+
   return (
     <div className="min-h-screen bg-[#050816] text-white">
       <Navbar />
@@ -32,7 +35,7 @@ function App() {
         </h2>
 
         <p className="text-gray-400">
-          Track missions, gain XP and protect the city.
+          Track misions, gain XP and protect the city.
         </p>
 
         <Button onClick={() => setMissions(missions + 1)}>
@@ -49,6 +52,8 @@ function App() {
             />
           ))}
         </div>
+
+        <MisionCard />
       </main>
     </div>
   )
