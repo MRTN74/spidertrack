@@ -1,26 +1,41 @@
 import { useState } from "react"
 import StatCard from "./Components/StatCard"
-import Button from "./Components/Button"
 import Navbar from "./Components/Navbar"
 import MisionCard from "./Components/MisionCard"
 
 function App() {
-  const [missions, setMissions] = useState(12)
+  const [missions] = useState([
+    {
+      id: 1,
+      title: "Learn React",
+      xp: 100,
+    },
+    {
+      id: 2,
+      title: "Workout",
+      xp: 50,
+    },
+    {
+      id: 3,
+      title: "Read 10 Pages",
+      xp: 25,
+    },
+  ])
 
   const stats = [
     {
       title: "Active Misions",
-      value: missions,
+      value: missions.length,
       color: "text-red-400",
     },
     {
       title: "Completed",
-      value: 48,
+      value: 0,
       color: "text-green-400",
     },
     {
       title: "Hero Level",
-      value: 7,
+      value: 1,
       color: "text-blue-400",
     },
   ]
@@ -38,10 +53,6 @@ function App() {
           Track misions, gain XP and protect the city.
         </p>
 
-        <Button onClick={() => setMissions(missions + 1)}>
-          Complete Mission
-        </Button>
-
         <div className="grid grid-cols-3 gap-6 mt-10">
           {stats.map((stat) => (
             <StatCard
@@ -53,7 +64,15 @@ function App() {
           ))}
         </div>
 
-        <MisionCard />
+        <div className="mt-10 space-y-4">
+          {missions.map((mission) => (
+            <MisionCard
+              key={mission.id}
+              title={mission.title}
+              xp={mission.xp}
+            />
+          ))}
+        </div>
       </main>
     </div>
   )
